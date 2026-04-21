@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Website Detection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1f4162;
+        }
+
+        .container {
+            width: 420px;
+            margin: 100px auto;
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .phishing {
+            background: #ffe6e6;
+            color: #cc0000;
+        }
+
+        .legitimate {
+            background: #e6ffe6;
+            color: #006600;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Phishing Website Detection</h2>
+
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter website URL" required>
+        <button type="submit">Check URL</button>
+    </form>
+
+    {% if prediction %}
+        {% if "Phishing" in prediction %}
+            <div class="result phishing">
+                {{ prediction }}
+            </div>
+        {% else %}
+            <div class="result legitimate">
+                {{ prediction }}
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+
+</body>
+</html>

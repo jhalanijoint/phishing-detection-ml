@@ -24,3 +24,10 @@ This project detects phishing websites using machine learning techniques based o
 
 ## How to Run
 1. Install dependencies:
+pip install -r requirements.txt
+2. Run app:
+python app.py
+3. Future Improvements
+- Deep learning models
+- Browser extension integration
+- Real-time feature extraction

@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+
+# Optional: ignore model files (only if large)
+*.pkl
